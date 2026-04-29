@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LensLab — Camera & Gear Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Page -->
+<div id="loginPage" class="login-wrap">
+  <div class="login-panel">
+    <div class="brand-mark">LL</div>
+    <h2>LensLab Studio</h2>
+    <p class="tagline">Professional Gear. Serious Photography.</p>
+    <div class="field-group">
+      <input id="username" placeholder="Username" autocomplete="off">
+      <input id="password" type="password" placeholder="Password">
+    </div>
+    <button class="btn-primary" onclick="login()">Enter Studio</button>
+    <div id="loginError" class="msg-error"></div>
+  </div>
+</div>
+
+<!-- Main App -->
+<div id="app" class="app hidden">
+
+  <header class="site-header">
+    <div class="header-left">
+      <span class="logo-text">LensLab</span>
+    </div>
+    <nav class="main-nav">
+      <button class="nav-btn active" data-page="cameras" onclick="switchPage('cameras', this)">Cameras</button>
+      <button class="nav-btn" data-page="lenses" onclick="switchPage('lenses', this)">Lenses</button>
+      <button class="nav-btn" data-page="contact" onclick="switchPage('contact', this)">Contact</button>
+    </nav>
+    <div class="header-right">
+      <div id="userBadge" class="user-badge"></div>
+      <button class="logout" onclick="logout()">Sign Out</button>
+    </div>
+  </header>
+
+  <main class="content-area">
+
+    <!-- Cameras Page -->
+    <section id="cameras" class="page">
+      <div class="page-hero cameras-hero">
+        <div class="hero-content">
+          <span class="category-label">Equipment</span>
+          <h1>Camera<br>Collection</h1>
+          <p>Precision instruments for image-makers who demand the best.</p>
+        </div>
+        <div class="hero-img-wrap">
+          <img src="https://www.driftwoodjournals.com/s/img/wp-content/uploads/2024/04/DSLR-Cameras.jpg" alt="Professional Camera">
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="card-img">
+            <img src="https://cdn.mos.cms.futurecdn.net/uwHcpwnff6LW6AdGCnd9K9.jpg" alt="DSLR">
+          </div>
+          <div class="card-body">
+            <span class="type-tag">DSLR</span>
+            <h3>Reflex Series</h3>
+            <p>Optical viewfinder, long battery life, and uncompromising manual control.</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="card-img">
+            <img src="https://amateurphotographer.com/wp-content/uploads/sites/7/2024/10/CA_Chisom-Okoye_X-M5_25.jpg?w=900" alt="Mirrorless">
+          </div>
+          <div class="card-body">
+            <span class="type-tag">Mirrorless</span>
+            <h3>Compact Pro</h3>
+            <p>Silent shooting, intelligent AF, and full-frame video in a slim body.</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="card-img">
+            <img src="https://images.ctfassets.net/bht415zek091/41wR8dFq1bTp2Wt23cunSW/d3acb7b2e6bbc7ff59182bbe531c789b/Copy-of-Cine-Shoot-October-2nd-171-web.jpg" alt="Cinema">
+          </div>
+          <div class="card-body">
+            <span class="type-tag">Cinema</span>
+            <h3>Cine Edition</h3>
+            <p>RAW recording, dual native ISO, and cinema-grade colour science.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Lenses Page -->
+    <section id="lenses" class="page hidden">
+      <div class="page-hero lenses-hero">
+        <div class="hero-content">
+          <span class="category-label">Optics</span>
+          <h1>Lens<br>Library</h1>
+          <p>Glass engineered for sharpness, character, and creative control.</p>
+        </div>
+        <div class="hero-img-wrap">
+          <img src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2015/01/featuredlenses.jpg" alt="Camera Lenses">
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="card-img">
+            <img src="https://cdn.mos.cms.futurecdn.net/8N75Qn3KQfbUSMmtwdJg2n.jpg" alt="Wide Angle">
+          </div>
+          <div class="card-body">
+            <span class="type-tag">Wide</span>
+            <h3>Ultrawide Prime</h3>
+            <p>Extreme field of view for landscapes, interiors, and environmental portraits.</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="card-img">
+            <img src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/A-Guide-to-Choosing-the-Perfect-Portrait-Lens-ts_1.jpg?itok=Bazd4I5G" alt="Portrait">
+          </div>
+          <div class="card-body">
+            <span class="type-tag">Portrait</span>
+            <h3>Bokeh Master</h3>
+            <p>Fast aperture, dreamy separation, and flattering subject rendering.</p>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="card-img">
+            <img src="https://www.adorama.com/alc/wp-content/uploads/2022/09/joshua-hoehne-LkchRtiktos-unsplash.jpg" alt="Telephoto">
+          </div>
+          <div class="card-body">
+            <span class="type-tag">Telephoto</span>
+            <h3>Long Reach</h3>
+            <p>Reach distant subjects with clinical sharpness. Wildlife and sport ready.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page hidden">
+      <div class="contact-wrap">
+        <div class="contact-intro">
+          <span class="category-label">Get in Touch</span>
+          <h1>Contact<br>LensLab</h1>
+          <p>Questions about gear? Rental inquiries? Drop us a line and we'll get back to you within 24 hours.</p>
+        </div>
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+            <span id="nameError" class="msg-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input id="email" type="text" placeholder="you@example.com" oninput="checkEmail()">
+            <span id="emailError" class="msg-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="text" placeholder="+1 234 567 890" oninput="checkPhone()">
+            <span id="phoneError" class="msg-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="What can we help you with?"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-submit">Send Message</button>
+          <div id="formSuccess" class="msg-success"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
